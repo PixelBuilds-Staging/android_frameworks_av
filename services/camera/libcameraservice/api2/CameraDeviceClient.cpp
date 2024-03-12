@@ -118,7 +118,7 @@ CameraDeviceClient::CameraDeviceClient(const sp<CameraService>& cameraService,
     char value[PROPERTY_VALUE_MAX];
     property_get("persist.vendor.camera.privapp.list", value, "");
     String16 packagelist(value);
-    if (packagelist.contains(clientPackageName.string())) {
+    if (packagelist.contains(toString16(clientPackageName))) {
         mPrivilegedClient = true;
     }
 
